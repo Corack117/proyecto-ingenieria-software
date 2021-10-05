@@ -1,0 +1,1 @@
+La guía completa se encuentra en el archivo `docs/index.md`.

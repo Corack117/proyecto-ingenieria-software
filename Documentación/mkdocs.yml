@@ -1,0 +1,24 @@
+site_name: Proyecto Final
+dev_addr: 127.0.0.1:8002
+# site_url: 
+# repo_url: 
+# repo_name: <i class="fa fa-git"></i>
+
+theme:
+    name: mkdocs
+    custom_dir: resources/
+extra_css:
+    - css/page.css
+nav:
+    - Problema: todo.md
+    - Requerimientos:
+        - Requerimiento 1: todo.md
+        - Requerimiento 2: todo.md
+    - Modelado:
+        - Inicio: todo.md
+    - Diseño:
+        - Inicio: todo.md
+    - Validación:
+        - Inicio: todo.md
+copyright: ©GMDXX
+site_author: GMDXX
