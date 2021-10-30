@@ -1,0 +1,45 @@
+{% load static %}
+<div class="bar">
+	<div class="barnav">
+		<ul class="bar_list_icon">
+			<li>
+				<div id="bar_icon" class="icon" onclick="barIconClick(this)">
+					 <i class="fa fa-bars icon_bn"></i>
+				</div>
+			</li>
+			<li id="logobn" class="logo_container right"><div class="logo"></div></li>
+		</ul>
+		
+		<ul id="bar-nav" class="bar_list">
+			<li id="logo" class="logo_container"><div class="logo"></div></li>
+			<li><a id="inicio" onclick="start();" class="active">Inicio</a></li>
+			<li class="store"><a id="productsMenu" onclick="store();">Tienda</a></li>
+			<div class="bar_list_hidden" id="dropdown-content">
+				<ul class="bar_list bar_store_list">
+					<li><a onclick="store();">Cervezas</a></li>
+					<li><a onclick="store();">Mezcales</a></li>
+					<li><a onclick="store();">Sets</a></li>
+				</ul>
+			</div>
+			<li class="store_mobile">
+				<a id="store_menu_mobile">
+					Tienda
+					<i class='fas fa-sort-down'></i>
+				</a>
+			</li>
+			<li id="store_mobile_dropdown" class="store_dropdown">
+				<div class="store_menu">
+					<ul class="bar_store_list">
+						<li><a onclick="store();">Todos</a></li>
+						<li><a onclick="store();">Baktún</a></li>
+						<li><a onclick="store();">Alma de Mujer</a></li>
+						<li><a onclick="store();">Más...</a></li>
+					</ul>
+				</div>
+			</li>
+			<li><a id="team" onclick="team();">Equipo Baktún</a></li>
+			<li><a id="more" onclick="more();">¿Quieres saber más?</a></li>
+			<li class="right"><a id="contact" onclick="contact();">Contacto</a></li>
+		</ul>
+	</div>
+</div>
