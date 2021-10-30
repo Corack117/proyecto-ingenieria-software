@@ -1,6 +1,6 @@
 /.nova
 /.vs
 /.DS_Store
-*/.nova
-*/.vs
-*/.DS_Store
+**/.nova
+**/.vs
+**/.DS_Store
