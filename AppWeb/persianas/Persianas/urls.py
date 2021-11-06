@@ -15,7 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from applications.clientes import urls as clientes
+from applications.principal import urls as principal
+from applications.productos import urls as productos
+from applications.usuarios import urls as usuarios
+from applications.ventas import urls as ventas
+from .settings.base import MEDIA_URL, STATIC_URL
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('', include(clientes)),
+    path('', include(principal)),
+    path('', include(productos)),
+    path('', include(usuarios)),
+    path('', include(ventas)),
+] + static(MEDIA_URL, document_root = MEDIA_ROOT)
