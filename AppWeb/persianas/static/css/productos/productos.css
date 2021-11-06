@@ -1,0 +1,59 @@
+.addProduct {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+	border: 3px solid transparent;
+	border-radius: 5px;
+	cursor: pointer;
+	background: rgba(255, 255, 255, 0.1);
+	-webkit-user-select: none !important;
+	-moz-user-select: none !important;
+	-ms-user-select: none !important;
+	user-select: none !important; 
+}
+
+.addProduct:hover {
+	background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.banner_switch
+{
+	display: flex;
+	border-radius: 3px;
+	background-color: rgba(255, 255, 255, 0.3);
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.banner_switch_button
+{
+	margin: 2px !important;
+}
+
+.banner_switch_title
+{
+	padding: 2px 0 2px 2px;
+	color: white !important;
+	margin: 0;
+	flex: 80%;
+}
+
+.changeViewButton{
+	width: 100%;
+	border-radius: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.changeViewButton:hover{
+	background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.changeViewButton.active{
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.filter_product {
+	background-color: rgba(0, 0, 0, .4);
+	color: white;
+}
