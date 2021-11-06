@@ -4,3 +4,11 @@
 **/.nova
 **/.vs
 **/.DS_Store
+
+#No Commit
+secret.json
+__pycache__
+applications/*/migrations/*.py
+
+#Exceptions
+!applications/*/migrations/__init__.py
