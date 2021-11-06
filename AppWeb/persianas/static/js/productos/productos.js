@@ -15,12 +15,12 @@ function initializeDataTable()
 		   url: "/productos/curd",
 		   type: "get",
 		   data: function (data) {
-			   let min = parseInt($('#minFilter').val().trim())
-			   let max = parseInt($('#maxFilter').val().trim())
-			   data = $('#filter').attr('data')
-			   data = {data, min, max}
-			   data = {data: JSON.stringify(data)}
-			   return data
+			   // let min = parseInt($('#minFilter').val().trim())
+			   // let max = parseInt($('#maxFilter').val().trim())
+			   // data = $('#filter').attr('data')
+			   // data = {data, min, max}
+			   // data = {data: JSON.stringify(data)}
+			   // return data
 		   },
 		   "dataSrc": function (json) {
 			   $(json.data).each((position, value) => {
