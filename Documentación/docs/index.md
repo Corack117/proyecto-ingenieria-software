@@ -13,7 +13,7 @@ Integrantes del Equipo:
 
 | Nombre | correo |
 | --- | --- |
-| Name 1 | my.email@mail.com |
+| Johan Andrés Lozano Pérez | 420098597@pcpuma.acatlan.unam.mx |
 | Name 2 | my.email@mail.com |
 
 &nbsp;
@@ -21,3 +21,12 @@ Integrantes del Equipo:
 
 &nbsp;
 # Problematica
+
+&nbsp;
+# Diagramas
+* Diagrama Base de datos
+<img src="/archivos/index/Diagrama Base de datos.png" alt="drawing" width="200" style="width: 100%;"/>
+* Diagrama Cliente-servidor
+<img src="/archivos/index/Diagrama Cliente-servidor.png" alt="drawing" width="200" style="width: 100%;"/>
+* Diagrama pagina
+<img src="/archivos/index/Diagrama pagina.png" alt="drawing" width="200" style="width: 100%;"/>
