@@ -1,0 +1,92 @@
+{% extends 'base/menu.html' %}
+{% load static %}
+
+{% block scripts %}
+<script src="{% static 'js/admin/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'js/admin/datatables/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'js/admin/typeahead/typeahead.jquery.min.js' %}"></script>
+<script src="{% static 'js/admin/sweetalert2.min.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        cargaTabla();
+        $(document).click(function (e) {
+            if ($(e.target).is('.modalContainer')) {
+                closeModal();
+            }
+        });
+        $('body').on('click', '.clickClose', closeModal);
+        $('body').on('click', '.buttAcept', acceptChangeStatus);
+        $('body').on('click', '.buttCancel', closeEditStatus);
+        $('body').on('click', '.buttonThChangeStatus', editStatus);
+        $('#selectStatus').change(changeDataTable);
+    });
+</script>
+
+<script src="{% static 'js/cancelaciones/cancelaciones.js' %}"></script>
+<script src="{% static 'js/ventas/modal.js' %}"></script>
+{% endblock scripts %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/ventas/ventas.css' %}">
+<link rel="stylesheet" href="{% static 'css/cancelaciones/cancelaciones.css' %}">
+<link rel="stylesheet" href="{% static 'css/admin/sweetalert2.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/admin/datatables/dataTables.bootstrap4.min.css' %}">
+{% endblock styles %}
+
+
+{% block containtDisplay %}
+
+<div class="mainTitle cancelaciones"><h2 class="card-title">Cancelaciones</h2></div>
+<div class="mainTitle" style="margin-top: 15px;margin-bottom: 50px;">
+    <div class="card">
+        <div class="selectContainer">
+            <span>Status:</span>
+            <select name="statusSelect1" id="selectStatus" style="padding: 5px;">
+                <option value="2">Aceptado</option>
+                <option value="1" selected="selected">Pendiente</option>
+                <option value="3">Denegado</option>
+                <option value="4">Todos</option>
+            </select>
+        </div>
+        <div class="card-body">
+            <table id="example-1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>No. Pedido</th>
+                        <th>Cliente</th>
+                        <th>Dirección</th>
+                        <th>Motivo</th>
+                        <th>Fecha</th>
+                        <th>Estatus</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>No. Pedido</th>
+                        <th>Cliente</th>
+                        <th>Dirección</th>
+                        <th>Motivo</th>
+                        <th>Fecha</th>
+                        <th>Estatus</th>
+                        <th>Acciones</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- ventana modal -->
+<div class="modalContainer">
+    <div class="modal modalClose">
+        <div class="modalTitulo">
+            <h3>Dirección </h3>
+        </div>
+        <div class="modalDataContainer"></div>
+        <div class="modalbuttonContainer">
+            <div class="clickClose">Cerrar</div>
+        </div>
+    </div>
+</div>
+{% endblock containtDisplay %}

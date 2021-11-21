@@ -1,0 +1,14 @@
+:root{
+    /* Variables */
+    --backgroundCancelaciones: rgb(213, 36, 109);
+}
+
+.selectContainer{
+    margin-left: 35px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+.cancelaciones{
+    /* background-color: var(--backgroundPedidos); */
+    background: linear-gradient(200deg, var(--backgroundCancelaciones) 0%, var(--backgroundGeneral) 100%);
+}
