@@ -5,4 +5,6 @@ from . import views as vw
 
 urlpatterns = [
 	path('productos/', vw.productos),
+	path('categorias/', vw.categorias),
+    path('categorias/info', vw.curdcategorias.as_view())
 ]
