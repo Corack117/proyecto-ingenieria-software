@@ -1,5 +1,8 @@
 const peticiones = apiRequests('peticion/admins')
 
+window.onload = () => {
+	
+}
 
 function initializeDataTable()
 {
