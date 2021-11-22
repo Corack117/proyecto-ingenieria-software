@@ -1,0 +1,264 @@
+{% extends 'base/menu.html' %}
+{% load static %}
+
+{% block scripts %}
+<script src="{% static 'js/admin/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'js/admin/datatables/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'js/admin/typeahead/typeahead.jquery.min.js' %}"></script>
+<script src="{% static 'js/admin/sweetalert2.min.js' %}"></script>
+<script src="{% static 'js/extras.js' %}"></script>
+<script src="{% static 'js/usuarios/utils.js' %}"></script>
+<script src="{% static 'js/usuarios/admin.js' %}"></script>
+<script src="{% static 'js/usuarios/simpleModal.js' %}"></script>
+{% endblock scripts %}
+
+
+{% block styles %}
+<link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/admin/sweetalert2.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/admin/datatables/dataTables.bootstrap4.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/productos/productos.css' %}">
+<link rel="stylesheet" href="{% static 'css/productos/simpleModal.css' %}">
+<style>
+    .color-title, .topbar {
+        background: linear-gradient(90deg, rgba(255, 94, 0, 0.7) 0%,rgb(75, 75, 75) 90%) !important; 
+        border: none;
+    }
+</style>
+{% endblock styles %}
+    
+
+{% block containtDisplay %}
+    <div class="main-content">
+        
+        <div class="modal modal-fill fade" data-backdrop="false" id="new-Admin" tabindex="-1" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Nuevo Administrador</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true" style="color: white;">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body form-type-material">
+                        <div id="new_First" style="max-height: 1000px;">
+                            <div class="form-group">
+                                <input id="new_Name" type="text" class="form-control">
+                                <label>Nombre</label>
+                            </div>
+                            <div class="row" style="justify-content: space-between; margin: 0;">
+                                <div class="form-group" style="width: 45%">
+                                    <input id="new_fLastName" type="text" class="form-control">
+                                    <label>Apellido Paterno</label>
+                                </div>
+                                <div class="form-group" style="width: 45%">
+                                    <input id="new_sLastName" type="text" title="Non-negative integral number" class="form-control">
+                                    <label>Apellido Materno</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input id="new_Email" type="text" title="Non-negative integral number" class="form-control">
+                                <label>Email</label>
+                            </div>
+                            <div class="row" style="justify-content: space-between; margin: 0;">
+                                <div class="form-group" style="width: 45%">
+                                    <input id="new_Password" type="password" class="form-control">
+                                    <label>Contraseña</label>
+                                </div>
+                                <div class="form-group" style="width: 45%">
+                                    <input id="new_rPassword" type="password" class="form-control">
+                                    <label>Confirmar contraseña</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="new_Second" style="display: none; max-height: 0; opacity: 0;">
+                            <div class="col-lg-12" style="background-color: #000000; padding: 10px 0; margin: 10px 0">
+                                <h4 style="color: #ffffff; text-align: center; margin-bottom: 0">
+                                    Foto de portada
+                                </h4>
+                            </div>
+                            <input type="file" class="dropify" data-provide="dropify" id="new_userPhoto" data-allowed-file-extensions="png jpg jpeg"/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="new_Save" type="button" class="btn btn-bold btn-pure btn-primary" style="display: none; opacity: 0; float: right;">
+                            Terminar
+                        </button>
+                        <button id="new_Next" type="button" class="btn btn-bold btn-pure btn-primary" style="float: right;">
+                            Siguiente
+                        </button>
+                        <button id="new_Back" type="button" class="btn btn-bold btn-pure btn-primary" style="display: none; opacity: 0; float: right;">
+                            Atras
+                        </button>
+                        <button id="new_Cancel_Left" type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal" style="display: none; opacity: 0;">
+                            Cerrar
+                        </button>
+                        <button id="new_Cancel" type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal" style="float: right;">
+                            Cerrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal modal-fill fade" data-backdrop="false" id="edit-Admin" tabindex="-1" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Editar Administrador</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true" style="color: white;">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body form-type-material">
+                        <div id="edit_First" style="max-height: 1000px;">
+                            <div class="form-group">
+                                <input id="edit_Name" type="text" class="form-control">
+                                <label>Nombre</label>
+                            </div>
+                            <div class="row" style="justify-content: space-between; margin: 0;">
+                                <div class="form-group" style="width: 45%">
+                                    <input id="edit_fLastName" type="text" class="form-control">
+                                    <label>Apellido Materno</label>
+                                </div>
+                                <div class="form-group" style="width: 45%">
+                                    <input id="edit_sLastName" type="text" title="Non-negative integral number" class="form-control">
+                                    <label>Apellido Materno</label>
+                                </div>
+                            </div>
+                            <div class="row" style="justify-content: space-between; margin: 0;">
+                                <div class="form-group" style="width: 100%">
+                                    <input id="edit_Email" type="text" title="Non-negative integral number" class="form-control">
+                                    <label>Email</label>
+                                </div>
+                            </div>
+                            <div class="banner_switch">
+                                <h6 class="banner_switch_title">
+                                    Habilitar usuario
+                                </h6>
+                                <label class="switch switch-lg banner_switch_button">
+                                    <input id="edit_IsActive" type="checkbox">
+                                    <span class="switch-indicator"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div id="edit_Second" style="display: none; max-height: 0; opacity: 0;">
+                            <div class="col-lg-12" style="background-color: #000000; padding: 10px 0; margin: 10px 0">
+                                <h4 style="color: #ffffff; text-align: center; margin-bottom: 0">
+                                    Foto de usuario
+                                </h4>
+                            </div>
+                            <input type="file" class="dropify" data-provide="dropify" id="edit_userPhoto" data-allowed-file-extensions="png jpg jpeg"/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="edit_Save" type="button" class="btn btn-bold btn-pure btn-primary" style="display: none; opacity: 0; float: right;">
+                            Terminar
+                        </button>
+                        <button id="edit_Next" type="button" class="btn btn-bold btn-pure btn-primary" style="float: right;">
+                            Siguiente
+                        </button>
+                        <button id="edit_Back" type="button" class="btn btn-bold btn-pure btn-primary" style="display: none; opacity: 0; float: right;">
+                            Atras
+                        </button>
+                        <button id="edit_Cancel_Left" type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal" style="display: none; opacity: 0;">
+                            Cerrar
+                        </button>
+                        <button id="edit_Cancel" type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal" style="float: right;">
+                            Cerrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modalContainer">
+            <div class="modalLight modalClose">
+                <div class="modalTitulo">
+                    <h3>Detalles</h3>
+                </div>
+                <div class="modalDataContainer">
+                    <div class="titleDataContent">
+                        <div class="dataItem">
+                            <span>Nombre</span>
+                        </div>
+                    </div>
+                    <div class="modalData" id="productos">
+                        <div class="DataContent">
+                            <div id="info_Name" class="dataItem">
+                                <span>Usuario</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="titleDataContent">
+                        <div class="dataItem">
+                            <span>Correo</span>
+                        </div>
+                    </div>
+                    <div class="modalData" id="productos">
+                        <div class="DataContent">
+                            <div id="info_Email" class="dataItem" style="padding: 3px;">
+                                <span>Correo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="banner_switch">
+                        <h6 class="banner_switch_title">
+                            Habilitar usuario
+                        </h6>
+                        <label class="switch switch-lg banner_switch_button">
+                            <input id="info_IsActive" type="checkbox" disabled>
+                            <span class="switch-indicator"></span>
+                        </label>
+                    </div>
+                    <div class="titleDataContent">
+                        <div class="dataItem">
+                            <span>Foto de portada</span>
+                        </div>
+                    </div>
+                    <img id="info_Cover" class="infoCover"/>
+                    <br/>
+                    <br/>
+                </div>
+                <div style="border-top: solid 1px white">
+                    <div class="clickClose" onclick="closeModal()">Cerrar</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card color-title" style="flex-direction: row; height: 55px; justify-content: space-between;">
+            <h4 class="card-title">
+                Administradores
+            </h4>
+            <div id="newAdmin" class="addProduct" data-toggle="modal" data-target="#new-Admin">
+                <h6 style="color: #c48b11; margin: 0;">
+                    Añade un Administrador
+                </h6>
+            </div>
+        </div>
+        
+        <div class="card">
+              <div class="card-body">
+                <table id="example-1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Imagen Perfil</th>
+                      <th>Nombre</th>
+                      <th>Correo</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                        <th>Imagen Perfil</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Acciones</th>
+                    </tr>
+                  </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock containtDisplay %}

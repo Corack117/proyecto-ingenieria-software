@@ -24,8 +24,10 @@ Integrantes del Equipo:
 
 &nbsp;
 # Diagramas
-
 * Diagrama Base de datos
 <img src="/archivos/index/Diagrama Base de datos.png" alt="drawing" width="200" style="width: 100%;"/>
-
+* Diagrama Cliente-servidor
+<img src="/archivos/index/Diagrama Cliente-servidor.png" alt="drawing" width="200" style="width: 100%;"/>
+* Diagrama pagina
+<img src="/archivos/index/Diagrama pagina.png" alt="drawing" width="200" style="width: 100%;"/>
 
