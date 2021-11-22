@@ -4,6 +4,7 @@
 **/.nova
 **/.vs
 **/.DS_Store
+media/*
 
 #No Commit
 secret.json
@@ -12,3 +13,4 @@ applications/*/migrations/*.py
 
 #Exceptions
 !applications/*/migrations/__init__.py
+!media/default_pictures
