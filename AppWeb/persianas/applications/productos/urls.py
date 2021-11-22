@@ -6,9 +6,9 @@ from django.urls import path, include
 
 urlpatterns = [
 	path('productos/', vw.productos),
+	path('productos/info', vw.curdproductos.as_view()),
 	path('marcas/', vw.marcas),
     path('marcas/info', vw.curdmarcas.as_view()),
 	path('categorias/', vw.categorias),
-    path('categorias/info', vw.curdcategorias.as_view())
-	path('productos/info', vw.curdproductos.as_view()),
+    path('categorias/info', vw.curdcategorias.as_view()),
 ]

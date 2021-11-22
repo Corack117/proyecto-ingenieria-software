@@ -4,5 +4,4 @@ from django.urls import path, include
 from . import views as vw
 
 urlpatterns = [
-	path('productos/info', vw.curdproductos.as_view()),
 ]

@@ -10,6 +10,7 @@
 <script src="{% static 'js/dropzone.min.js' %}"></script>
 <script src="{% static 'js/utils/utils.js' %}"></script>
 <script src="{% static 'js/productos/productos.js' %}"></script>
+<script src="{% static 'js/productos/simpleModal.js' %}"></script>
 <script src="{% static 'swiper/js/swiper.min.js' %}"></script>
 {% endblock scripts %}
 
@@ -22,6 +23,7 @@
 <link rel="stylesheet" href="{% static 'css/dropzone.min.css' %}">
 <link rel="stylesheet" href="{% static 'css/utils/utils.css' %}">
 <link rel="stylesheet" href="{% static 'css/productos/productos.css' %}">
+<link rel="stylesheet" href="{% static 'css/productos/simpleModal.css' %}">
 <link rel="stylesheet" href="{% static 'js/admin/swiper/swiper.min.css' %}">
 <style>
 	.color-title, .topbar {
@@ -54,6 +56,148 @@
 							Guardar
 						</button>
 					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modalContainer">
+			<div class="modalLight modalClose">
+				<div class="modalTitulo">
+					<h3>Detalles</h3>
+				</div>
+				<div class="modalDataContainer">
+					<div class="titleDataContent">
+						<div class="dataItem">
+							<span>Nombre</span>
+						</div>
+					</div>
+					<div class="modalData" id="productos">
+						<div class="DataContent">
+							<div id="info_Name" class="dataItem">
+								<span>Producto</span>
+							</div>
+						</div>
+					</div>
+					<div class="titleDataContent">
+						<div class="dataItem">
+							<span>En inventario</span>
+						</div>
+						<div class="dataItem">
+							<span>Presentación</span>
+						</div>
+						<div class="dataItem">
+							<span>Precio</span>
+						</div>
+					</div>
+					<div class="modalData" id="productos">
+						<div class="DataContent">
+							<div id="info_Inventory" class="dataItem">
+								<span>Cantidad</span>
+							</div>
+							<div id="info_Presentation" class="dataItem">
+								<span>250ml</span>
+							</div>
+							<div id="info_Price" class="dataItem">
+								<span>$0</span>
+							</div>
+						</div>
+					</div>
+					<div class="titleDataContent">
+						<div class="dataItem">
+							<span>Descripción</span>
+						</div>
+					</div>
+					<div class="modalData" id="productos">
+						<div class="DataContent">
+							<div id="info_Description" class="dataItem" style="padding: 3px;">
+								<span>Descripción</span>
+							</div>
+						</div>
+					</div>
+					<div class="titleDataContent">
+						<div class="dataItem">
+							<span>Marca</span>
+						</div>
+					</div>
+					<div class="modalData" id="productos">
+						<div class="DataContent">
+							<div id="info_Brand" class="dataItem">
+								<span>Marca</span>
+							</div>
+						</div>
+					</div>
+					<div class="titleDataContent">
+						<div class="dataItem">
+							<span>Categoría</span>
+						</div>
+					</div>
+					<div class="modalData" id="productos">
+						<div class="DataContent">
+							<div id="info_Category" class="dataItem">
+								<span>Categoría</span>
+							</div>
+						</div>
+					</div>
+					<div class="titleDataContent">
+						<div class="dataItem">
+							<span>Subcategoría</span>
+						</div>
+					</div>
+					<div class="modalData" id="productos">
+						<div class="DataContent">
+							<div id="info_Subcategory" class="dataItem">
+								<span>Subcategoría</span>
+							</div>
+						</div>
+					</div>
+					<div class="titleDataContent">
+						<div class="dataItem">
+							<span>Descuento</span>
+						</div>
+					</div>
+					<div class="modalData" id="productos">
+						<div class="DataContent">
+							<div id="info_Discount" class="dataItem">
+								<span>Descuento</span>
+							</div>
+						</div>
+					</div>
+					<br/>
+					<div class="banner_switch">
+						<h6 class="banner_switch_title">
+							Tiene promoción
+						</h6>
+						<label class="switch switch-lg banner_switch_button">
+							<input id="info_Promotion" type="checkbox" disabled>
+							<span class="switch-indicator"></span>
+						</label>
+					</div>
+					<div class="banner_switch">
+						<h6 class="banner_switch_title">
+							Disponible para venta
+						</h6>
+						<label class="switch switch-lg banner_switch_button">
+							<input id="info_Status" type="checkbox" disabled>
+							<span class="switch-indicator"></span>
+						</label>
+					</div>
+					
+					<div class="titleDataContent">
+						<div class="dataItem">
+							<span>Foto de portada</span>
+						</div>
+					</div>
+					<img id="info_Cover" class="infoCover"/>
+					
+					<div class="swiper-container" data-provide="swiper">
+						  <div class="swiper-wrapper">
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+					<br/>
+				</div>
+				<div style="border-top: solid 1px white">
+					<div class="clickClose" onclick="closeModal()">Cerrar</div>
 				</div>
 			</div>
 		</div>
@@ -150,15 +294,6 @@
 								</h6>
 								<label class="switch switch-lg banner_switch_button">
 									<input id="new_Promotion" type="checkbox">
-									<span class="switch-indicator"></span>
-								</label>
-							</div>
-							<div class="banner_switch">
-								<h6 class="banner_switch_title">
-									Compra por puntos
-								</h6>
-								<label class="switch switch-lg banner_switch_button">
-									<input id="new_Points" type="checkbox">
 									<span class="switch-indicator"></span>
 								</label>
 							</div>
@@ -301,15 +436,6 @@
 								</h6>
 								<label class="switch switch-lg banner_switch_button">
 									<input id="edit_Promotion" type="checkbox">
-									<span class="switch-indicator"></span>
-								</label>
-							</div>
-							<div class="banner_switch">
-								<h6 class="banner_switch_title">
-									Compra por puntos
-								</h6>
-								<label class="switch switch-lg banner_switch_button">
-									<input id="edit_Points" type="checkbox">
 									<span class="switch-indicator"></span>
 								</label>
 							</div>
