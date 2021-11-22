@@ -1,9 +1,7 @@
-const peticiones = apiRequests('peticion/admins')
-
-window.onload = () => {
+$(document).ready(function(){
+	initializeDataTable();
+});
 	
-}
-
 function initializeDataTable()
 {
 	// Setup - add a text input to each footer cell
@@ -15,20 +13,12 @@ function initializeDataTable()
 	// DataTable
 	var table = $('#example-1').DataTable({
 		'ajax': {
-		   url: "/productos/curd",
+		   url: "/cangeables/info",
 		   type: "get",
-		   data: function (data) {
-			   // let min = parseInt($('#minFilter').val().trim())
-			   // let max = parseInt($('#maxFilter').val().trim())
-			   // data = $('#filter').attr('data')
-			   // data = {data, min, max}
-			   // data = {data: JSON.stringify(data)}
-			   // return data
-		   },
 		   "dataSrc": function (json) {
 			   $(json.data).each((position, value) => {
-				   // let actions = value[6][0] + value[7] + value[6][1] + value[7] + value[6][2] + value[8] + value[6][3] + value[6][4] + value[7] + value[6][5]
-				   // value[6] = actions
+				   let actions = value[6][0] + value[7] + value[6][1]
+				   value[6] = actions
 			   })
 			   return json.data;
 		   },
