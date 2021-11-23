@@ -59,6 +59,12 @@
 	background-color: rgba(40, 40, 40, 1);
 }
 
+.bootstrap-select.btn-group .dropdown-menu.inner
+{
+	overflow: scroll auto;
+	max-height: 150px !important;
+}
+
 .bootstrap-select .dropdown-menu{
 	color: white;
 }

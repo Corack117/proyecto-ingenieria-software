@@ -76,6 +76,7 @@ function changeTable()
 		$('#newCategory').children().html('Añadir una categoría')
 		$('.bootstrap-select').css('display', 'none')
 		$('bootstrap-select').css('display', 'none')
+		$('.card-title').html('Categoría')
 	}
 	if(data == 'subcategorias')
 	{
@@ -93,6 +94,7 @@ function changeTable()
 		$('#newCategory').children().html('Añadir una subcategoría')
 		$('#newCategory').css('max-width', '300px')
 		$('.bootstrap-select').css('display', 'block')
+		$('.card-title').html('Subcategoría')
 	}
 	$('#header_column').html(nameTable)
 	$('#footer_column').html(nameTable)
