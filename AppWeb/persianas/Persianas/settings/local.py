@@ -6,22 +6,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-INSTALLED_APPS = [
-	'django.contrib.admin',
-	'django.contrib.auth',
-	'django.contrib.contenttypes',
-	'django.contrib.sessions',
-	'django.contrib.messages',
-	'django.contrib.postgres',
-	# para el live
-	'livereload',
-	# fin del live
-	'django.contrib.staticfiles',
-	'applications.productos',
-	'applications.usuarios',
-	'applications.ventas',
-	'applications.principal',
-]
 
 MIDDLEWARE = [
 	'django.middleware.security.SecurityMiddleware',

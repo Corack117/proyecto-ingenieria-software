@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from applications.clientes import urls as clientes
 from applications.principal import urls as principal
 from applications.productos import urls as productos
 from applications.usuarios import urls as usuarios
@@ -25,7 +24,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(clientes)),
     path('', include(principal)),
     path('', include(productos)),
     path('', include(usuarios)),
