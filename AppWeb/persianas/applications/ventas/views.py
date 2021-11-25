@@ -29,7 +29,7 @@ def agregarRegistroVentas():
             "address":{
                     "calle":"Av. San juan",
                     "colonia":"Las huertas",
-                    "numeroExterior":"sn",
+                    "numeroExterior":"18",
                     "numeroInterior":"sn",
                     "entreCalle1":"calle spo",
                     "entreCalle2":"Av. Las palmas 1",
@@ -90,8 +90,11 @@ def getAllDataVenta():
         buttonProduct = '<div style="margin-left:10px;"><span title="Productos" class="icon ti-package buttonThModalP"></span></div>'
         buttonChangeStatus = '<div style="margin-left:auto;"><span title="Editar" class="icon ti-pencil buttonThChangeStatus"></span></div>'
         metaAddress = ast.literal_eval(x.metadata['address'])
+        user = User.objects.get(id=x.user)
+        lastname = user.last_name.replace("/", " ")
+        name = lastname + " " + user.first_name
         #Numero de pedido
-        divIdVenta = f'<div idVenta={x.id} class="containerTdData"><div>{x.id}</div></div>'
+        divIdVenta = f'<div idVenta={x.id} class="containerTdData" dataName="{name}"><div>{x.id}</div></div>'
         #Status
         divStatus = f'<div class="containerTdData"><div class="containerTdStatus">{x.get_status_display()}</div><div class="containerChangeButt"></div></div>'
         #Direccion
@@ -157,8 +160,11 @@ def getAllDataCancelacion(recibido):
         buttonProduct = '<div style="margin-left:10px;"><span title="Productos" class="icon ti-package buttonThModalP"></span></div>'
         
         metaAddress = ast.literal_eval(x.venta.metadata['address'])
+        user = User.objects.get(id=x.user)
+        lastname = user.last_name.replace("/", " ")
+        name = lastname + " " + user.first_name
         
-        divIdVenta = f'<div idVenta={x.venta.id} id="{x.id}" class="containerTdData"><div>{x.venta.id}</div></div>'
+        divIdVenta = f'<div idVenta={x.venta.id} id="{x.id}" class="containerTdData" dataName="{name}"><div>{x.venta.id}</div></div>'
         #Status
         divStatus = f'<div class="containerTdData"><div class="containerTdStatus">{x.get_status_display()}</div><div class="containerChangeButt"></div></div>'
         #Direccion
@@ -185,7 +191,7 @@ def getAllDataCancelacion(recibido):
             reason, 
             str(datetime.date(x.date)),
             divStatus,
-            actions,
+            actions
         ])
     return data
 

@@ -57,6 +57,7 @@ function openModal() {
         let addressNames = {
             "usuario": {
                 "title": "Usuario",
+                "cliente": "Cliente",
                 "destinatario": "Destinatario",
                 "telefono": "Telefono",
             },
@@ -98,10 +99,16 @@ function openModal() {
                     if (title != "datosAdicionales") { //Caso "datosAdicionales" solo se agrega un div
                         for (let x in addressNames[title]) {
                             if (x != "title") { //Ignorar el nombre del titulo
+                                if(DicAddress[x] != null)
                                 modalData.append(`<div class="DataContentA">
                             <div class="dataItemA"><span>${addressNames[title][x]}</span></div>
                             <div class="dataItemA2"><span>${DicAddress[x]}</span></div></div>`
                                 );
+                                else
+                                modalData.append(`<div class="DataContentA">
+                                <div class="dataItemA"><span>${addressNames[title][x]}</span></div>
+                                <div class="dataItemA2"><span>${$('.containerTdData').attr('dataName')}</span></div></div>`
+                                    );
                             }
                         }
                     } else { //Caso "datosAdicionales" solo se agrega un div

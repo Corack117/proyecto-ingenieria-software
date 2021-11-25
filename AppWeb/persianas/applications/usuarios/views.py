@@ -42,7 +42,7 @@ class AdminViews(View):
             newAdmin.save()
             return HttpResponse(json.dumps({}), content_type='application/json')
         elif typeMove == 'delete':
-            admin = Admin.objects.get(id = data['id'])
+            admin = Admin.objects.get(user_id=data['id'])
             admin.user.is_superuser = False
             admin.user.save()
             admin.delete()

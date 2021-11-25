@@ -13,7 +13,7 @@ function cargaTabla() {
             type: "get",
             data: { 'data': JSON.stringify({ type: 'getCancelaciones', status: 1}) },
         },
-        "drawCallback": function () {
+        "drawCallback": function (data) {
             // funciones que se ejecutan cada vez que se escribe la tabla
             $('.buttonThModalP').click(openModal);
             $('.buttonThModal').click(openModal);
