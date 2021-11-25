@@ -281,3 +281,9 @@ El programa está configurado para aceptar direcciones IP del área de trabajo, 
 18. ¿Cómo desea que se muestren los descuentos? 
 19. ¿El dinero se depositaria en una cuenta señalada en el sitio o se pagaría personalmente? 
 20. ¿Algo que deseé usted añadir al sitio que no se haya mencionado?
+
+# Conclusiones
+
+<div style= "text-align: justify">
+Al final observamos que la pagina funciono sin problema alguno y con la entrevista que se tuvo con el cliente podemos observar que el cliente quedo satisfecho con el objetivo alcanzado de la página realizada, en la documentación se puede observar principalmente el objetivo que se desea alcanzar, la problemática, una descripción del software, de como se explica las partes que conforma la pagina con todo y con los diagramas necesarios para que le sean más útil al saber cómo funciona dicha pagina y de como esta conformado el software.
+</div>
