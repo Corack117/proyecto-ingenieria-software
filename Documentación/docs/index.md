@@ -258,3 +258,26 @@ Esta decisión se tomó por cuestiones de seguridad, debido a que existe la posi
 <div style= "text-align: justify">
 El programa está configurado para aceptar direcciones IP del área de trabajo,  esto con el motivo de mantener la seguridad y la privacidad a la hora de ingresar al servidor, de este modo se tiene un mayor control, ya que sólo las direcciones IP registradas tendrán acceso al servidor. Este aspecto será administrado por Django, de este modo se mantendrá privado el acceso al servidor y a la gestión de la base de datos.
 </div>
+
+# Preguntas que se hicieron durante la entevista
+
+1. ¿Cual es el nombre de la empresa?
+2. ¿Ya tienes un sitio Web o es un proyecto desde cero? 
+3. ¿Cuál es el propósito de la página? 
+4. ¿A quién va dirigida la página? 
+5. ¿Qué es lo primero que deseas que se visualice al entrar en el sitio? 
+6. ¿Qué datos de los usuarios necesitas? 
+7. ¿Cuántos números de contactos prefieres que deje el usuario? 
+8. ¿Qué datos de los asesores necesitas? 
+9. ¿Cuáles datos de los asesores se mostrarán al usuario? 
+10. ¿Qué datos del usuario podrá ver el asesor? 
+11. ¿Cómo desea que se la comunicación entre usuario y asesor? 
+12. ¿Cómo se registran las compras? 
+13. ¿Cuántas compras tendrá permitido hacer el usuario? 
+14. ¿Qué variables/categorías ocupa su empresa? 
+15. ¿Qué medidas maneja? 
+16. ¿Qué tipos de tela ofrece? 
+17. ¿Ofrece descuentos? 
+18. ¿Cómo desea que se muestren los descuentos? 
+19. ¿El dinero se depositaria en una cuenta señalada en el sitio o se pagaría personalmente? 
+20. ¿Algo que deseé usted añadir al sitio que no se haya mencionado?
