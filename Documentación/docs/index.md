@@ -78,15 +78,58 @@ En este diagrama se busca expresar la idea de cómo será el comportamiento de l
 &nbsp;
 
 <img src="/archivos/index/captura1.png">
+<center>
+## **Diagrama de Colaboración**
+</center>
+
+<div style= "text-align: justify">
+Para dar una idea de la interacción que se tendrá con cada apartado del software, ya sea por parte del cliente o por parte del administrador. En el caso particular del cliente, este podrá tener acceso a la consulta de presupuestos y  podrá solicitar pedidos. En el caso de solicitar pedido se le conectará con la base de datos en la que están registrados los productos para revisar las existencias, y si el cliente opta por realizar un pedido éste se guardará en el apartado de pedidos, si dicho pedido es aprobado, el cliente podrá realizar el pago correspondiente. En el caso del administrador este deberá confirmar su identidad para poder tener acceso a la base de datos y a los privilegios de administrador, este podrá aprobar los pedidos y revisar los pedidos existentes, editar la base de datos, también podrá verificar los pagos que se han realizado, esto para que el administrador tenga el control total de todos los movimientos para poder gestionar de la manera que más se adecue a sus necesidades.
+</div>
 
 &nbsp;
-# Diagramas
-* Diagrama Base de datos
-<img src="/archivos/index/Diagrama Base de datos.png" alt="drawing" width="200" style="width: 100%;"/>
-* Diagrama Cliente-servidor
-<img src="/archivos/index/Diagrama Cliente-servidor.png" alt="drawing" width="200" style="width: 100%;"/>
-* Diagrama pagina
-<img src="/archivos/index/Diagrama pagina.png" alt="drawing" width="200" style="width: 100%;"/>
+
+<img src="/archivos/index/captura2.png">
+
+<center>
+## **Diagrama de Estados**
+</center>
+
+<div style= "text-align: justify">
+En este diagrama se observa cómo interactúa el software y se puede ver los diversos estados en los que entra el programa, inicia creando un administrador y valida si estos cumple con lo requerido, o no es válido(incompleto), esto tanto para el administrador como para el usuario, después para el administrador que tendrá distintas opciones cambiará de estado segun donde este y el software cambiará de estado conforme llena, cambia o elimina datos como se muestra en el diagrama, también puede buscar y mostrará los estados dependiendo de si encuentra la información dentro de la base de datos.
+El usuario no es distinto pues puede realizar pedidos, cancelarlos, por lo que cambia el status del pedido según lo que hace el usuario.
+</div>
+
+&nbsp;
+
+<img src="/archivos/index/captura3.png">
+
+<center>
+## **Diagrama Actividades**
+</center>
+
+<div style= "text-align: justify">
+En este diagrama se muestra las actividades con las que el usuario interactúa el administrador con distintas partes y las bifurcaciones que provoca, por ejemplo inicia con un usuario que contiene una contraseña, luego esta con el buscador que entra a la base de datos ofrecerá un resultado del usuario que se busco. El administrador interactúa con los datos de la empresa y edita tanto los datos de la empresa como colocar las fotos del que ofrece(persianas), dentro de los productos está en el gráfico de venta diversos datos como su precio, medidas, características extra(descripción) y estos datos se registran dentro de la base de datos para que el buscador pueda detectarlo también.
+</div>
+
+&nbsp;
+
+<img src="/archivos/index/captura4.png">
+
+<center>
+## **Diagrama Despliegue**
+</center>
+
+Este diagrama muestra el proceso de inicio de sesión en un sitio web, desde el ingreso del nombre de usuario y la contraseña, hasta el inicio de sesión exitoso en el sistema.
+
+<img src="/archivos/index/captura5.png">
+
+<center>
+## **Diagrama de Base de Datos**
+</center>
+
+En este diagrama se muestra cómo está estructurada nuestra base de datos.
+
+<img src="/archivos/index/captura6.png">
 
 
 
