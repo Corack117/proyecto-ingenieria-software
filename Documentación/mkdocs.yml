@@ -10,15 +10,7 @@ theme:
 extra_css:
     - css/page.css
 nav:
-    - Problema: todo.md
-    - Requerimientos:
-        - Requerimiento 1: todo.md
-        - Requerimiento 2: todo.md
-    - Modelado:
-        - Inicio: todo.md
-    - Diseño:
-        - Inicio: todo.md
-    - Validación:
-        - Inicio: todo.md
+  - Documentación: index.md
+  - Entrevista: Entrevista.md
 copyright: ©GMDXX
 site_author: GMDXX

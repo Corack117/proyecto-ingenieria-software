@@ -13,8 +13,13 @@ Integrantes del Equipo:
 
 | Nombre | correo |
 | --- | --- |
+| Lopez Padilla Noe  | 092043033@pcpuma.acatlan.unam.mx |
+| Lopez Perez Jose Alejandro  | 315186530@pcpuma.acatlan.unam.mx |
 | Lozano Pérez Johan Andrés | 420098597@pcpuma.acatlan.unam.mx |
-| Name 2 | my.email@mail.com |
+| Ordaz Romero Sergio | 315086148@pcpuma.acatlan.unam.mx |
+| Santos Mejia Jonathan | 420093035@pcpuma.acatlan.unam.mx |
+| Siles Ochoa Edgar Jair | 420086734@pcpuma.acatlan.unam.mx |
+
 
 &nbsp;
 # Proyecto Final
