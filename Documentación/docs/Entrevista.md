@@ -1,6 +1,4 @@
-## Entrevista
-## Entrevistado
-## Entrevistador: 
+## Entrevista: 
 - 1.	¿Cuál es el nombre de la empresa?  
   A un está por definirse es un proyecto 
 
